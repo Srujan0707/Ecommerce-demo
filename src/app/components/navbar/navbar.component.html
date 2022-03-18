@@ -1,0 +1,52 @@
+<div class="container-fluid bg-blue sticky">
+<div class="container">
+  <div class="row">
+  <div class="col-lg-3">
+    <a class="logo" routerLink="/">
+      <img src="../../assets/images/logo.png">  
+      </a>
+  </div>
+  <div class="col-lg-6 input-style">
+    <form class="form-inline form-group"> 
+      <input class="form-control mr-sm-2 flipkart-navbar-input" type="text" placeholder="Search for Products, Brands and more"> 
+      <button class="btn btn-secondary my-2 my-sm-0 flipkart-navbar-button" type="submit">Search</button> 
+    </form>
+  </div>
+  <div class="col-lg-2"> 
+    <div class="dropdown">
+    <button class="dropbtn">
+      MORE INFO <i class="fa fa-chevron-circle-down fa-1x" aria-hidden="true"></i></button>
+    <div class="dropdown-content">
+      <a class="nav-link" routerLink="/products" routerLinkActive="Active" *ngIf="!isUser">Products</a>
+      <a class="nav-link" routerLink="/patients" routerLinkActive="Active" *ngIf="!isUser">Patients</a>
+      <a class="nav-link" routerLink="/login-new" routerLinkActive="Active" *ngIf="!isUser">Login-New</a>
+      <a class="nav-link" routerLink="/test" routerLinkActive="Active" *ngIf="!isUser">Test</a>
+      <a class="nav-link" routerLink="/prastice" routerLinkActive="Active" *ngIf="!isUser">Prastice</a>
+      <a class="nav-link" routerLink="/order" routerLinkActive="Active" *ngIf="isUser">Orders</a>
+      <a class="nav-link" routerLink="/account" routerLinkActive="Active" *ngIf="isUser">Account</a>
+      
+      <a class="nav-link" routerLink="/signup" routerLinkActive="Active" *ngIf="!isUser">Signup (Firebase)</a>
+     <a class="nav-link" routerLink="/login" routerLinkActive="Active" *ngIf="!isUser">Login (Firebase)</a>
+     <a class="nav-link" routerLink="/forms" routerLinkActive="Active" *ngIf="!isUser">Forms</a>
+     <a class="nav-link" routerLink="/logout" routerLinkActive="Active" *ngIf="isUser" (click)="userLogOut()" >Logout</a>
+    
+
+     
+   </div>
+  </div></div>
+  
+  <div class="col-lg-1">
+    <button class="btn custom" routerLink="/cart-new">
+      <i class="fa fa-cart-plus" aria-hidden="true"></i>
+    <div style="font-size: 10px; color: #fff;" class="badge bg-dark">1</div>
+    </button>
+    
+    <a class="nav-link Cart-Text" routerLink="/cart" routerLinkActive="Active" *ngIf="isUser"> <button class="btn btn-danger"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button></a>
+    </div>
+    
+
+  </div>
+</div>
+</div>
+
+

@@ -1,0 +1,16 @@
+.table-heading{
+
+background-color: #eb5455;
+color: #fff;
+text-transform: uppercase;
+border: 0px;
+}
+.button{
+    color: #fff;
+    background-color: #eb5455;
+    border-radius: 3px;
+    padding: 10px;
+    font-weight: normal;
+    width: 120px;
+    
+}

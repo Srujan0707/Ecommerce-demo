@@ -1,0 +1,78 @@
+<div class="container-fluid">
+    <div class="container">
+        <div class="row">
+<h1>The Below Mentioned Table Data is rendered from the API</h1>
+<code>API URL : <a href="http://my-json-server.typicode.com/TeluguTechSteps/Products/Info" target="_blank">http://my-json-server.typicode.com/TeluguTechSteps/Products/Info</a></code>
+            <table class="table">
+                <thead class="thead-dark">
+                   <th>Number</th>
+                   <th>Company</th>
+                   <th>Price</th>
+                   <th>Model</th>
+                </thead>
+                <tr *ngFor="let apiResult of results">
+                  <td>{{apiResult.id}}</td>  
+                  <td>{{apiResult.company}}</td>
+                  <td>{{apiResult.price}}</td>
+                  <td>{{apiResult.Model}}</td>
+                </tr>
+            </table>
+        </div>
+        <hr>
+<div class="row">
+    <h1>Two Way Data Binding:</h1>
+   </div>
+<div class="row">
+    <input type="text" #a (keyup.enter)="0"><strong>{{a.value}}</strong>
+</div>
+<br>
+<div class="row">
+    <strong>Two Way Data Binding by used the Event Handler by entering the data in the input field and reflect the same data in the side box<br><br><code>Press Enter Keyword after entering the data in the input field from the System Keyboard &#8617;. </code></strong>
+</div>
+<hr>
+<div class="row">
+<h1>Reactive Forms:</h1>
+</div>
+<div class="row">
+<div class="col-md-6">
+    <div class="form-group" [formGroup]="restaurantForm">
+        DishName    : <input type="text" formControlName="DishName" class="form-control">
+        <div class="alert alert-danger" *ngIf="restaurantForm.controls['DishName'].errors && restaurantForm.controls['DishName'].touched">
+        <span *ngIf="restaurantForm.controls['DishName'].errors.required">Dish name Must be Enter</span>
+        <span *ngIf="restaurantForm.controls['DishName'].errors.minlength">Dish name Must be atleast 10 Characters</span>
+        </div>
+        <br>
+        DishPrice   : <input type="text " formControlName="DishPrice" class="form-control">
+        <div class="alert alert-danger" *ngIf="restaurantForm.controls['DishPrice'].errors && restaurantForm.controls['DishPrice'].touched">
+            <span *ngIf="restaurantForm.controls['DishPrice'].errors.required">Dish Price Must be Enter</span>
+            <span *ngIf="restaurantForm.controls['DishPrice'].errors.minlength">Dish Price Must be atleast 05 Digits</span>
+            </div>
+        <br>
+        Ingredients : <input type="text" formControlName="Ingredients" class="form-control">
+        <div class="alert alert-danger" *ngIf="restaurantForm.controls['Ingredients'].errors && restaurantForm.controls['Ingredients'].touched">
+            <span *ngIf="restaurantForm.controls['Ingredients'].errors.required">Dish Ingredients are Mandiatory</span>
+            </div>
+        <br>
+        <button class="btn custom-btn" [disabled]="!restaurantForm.valid">Save</button>&nbsp;&nbsp;
+        <button class="btn custom-btn01" (click)="restaurantForm.reset()" >Reset</button>&nbsp;
+        <button class="btn btn-outline-success" (click)="test()">Console Checking Button</button>
+        </div>
+</div>
+<div class="col-md-6 bg-light no-code-style">
+         1) First Create New Component for the Reative Form - Restuarant Form<br>
+2) import "ReactiveFormsModule" from angular/forms in app.module.ts file at the same time we need to place the ReactiveFormsModule in import section.<br>
+3) If we want to create "Reactive-Form"  in Angular then we need two classes : 1:- FormGroup 2:- FormControl from "@angular/forms"<br>
+4) Now we are going to create a instance or object for this class.<br>
+   RestuarantForm = new FormGroup(); //So RestuarantForm is a object of FormGroup.<br>
+5) Now in the constructor of FormGroup we have to pass an object.., Inside this object we are giving Input Elements as a FormControl.<br>
+6) Defualt Value or Validator should be add for Input Element, for that we need to import this validator for ex: import "Validator" from angular/forms.<br>
+7) Now this Restuarant Form should be Bind in Our HTML Template.<br>
+8) Open the Browser to see the Reactive-Form.<br>
+
+ 
+</div>
+
+</div>
+<hr>
+    </div>
+</div>

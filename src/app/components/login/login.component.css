@@ -1,0 +1,92 @@
+.bg-image{
+    background-image: url(../../../assets/images/login-bg.png), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.1)) ;
+    background-size: cover;
+    min-height:100%;
+    background-blend-mode: overlay; 
+    height: 100%;
+    position: relative;
+
+}
+
+.middle-box{
+    width: 100%;
+    max-width: 600px;
+    padding: 25px;
+    background-color: #fff;
+    opacity: 0.95;
+    margin: 95px auto;
+    box-shadow: 0px 0px 0px 0px rgb(255 255 255), 0 0 10px rgb(255 255 255 / 95%);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    border-radius: 10px;
+}
+input{
+    border-radius: 2px;
+    border-color: #F4F4F4;
+    padding: 2px;
+    background-color: #f4f4f4;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    font-size: 14px;
+    padding-left: 10px;
+    color: grey;
+    opacity: 0.6; /* Firefox */
+  }
+input.ng-invalid{
+border-left: 10px solid red;
+}
+
+input.ng-valid{
+border-left: 10px solid green;
+}
+
+.text-position{
+
+    justify-content: center;
+    top: 0%;
+    position: relative;
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 20px;
+
+}
+
+.typing-font{
+  font-size: 32px;
+  line-height: 36px;
+  color: #dc3545;
+  font-weight: 500;
+}
+
+.btn-primary.disabled, .btn-primary:disabled {
+    cursor: not-allowed;
+    opacity: 0.2;
+    }
+.alert{
+    width: 100%;
+}
+.custom-btn{
+    background-color: #2e405a;
+    color: #fff;
+    cursor: not-allowed;
+    border-radius: 0%;
+    width: 110px;
+    padding: 10px;
+}
+
+.custom-btn:hover{
+    background-color: #eb5455;
+    color: #fff;
+}
+
+.custom-btn01{
+    background-color: #eb5455;
+    color: #fff;
+    border-radius: 0%;
+    width: 110px;
+    padding: 10px;
+}
+
+.custom-btn01:hover{
+    background-color: #2e405a;
+    color: #fff;
+}

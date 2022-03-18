@@ -1,0 +1,50 @@
+<div class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <table class="table table-bordered">
+                <thead>
+                   <td>Product Name:</td>
+                   <td>Product Price:</td>
+                   <td>Number Of Items:</td>
+                   <td>Actions</td>
+                   <td>Total</td>
+                   </thead>
+                <tbody>
+<tr *ngFor="let productsOfMobileShoppingCart of mobileShoppingCart | slice: startIndex: endIndex; index as i">
+<td>{{productsOfMobileShoppingCart.name}}</td>
+<td>{{productsOfMobileShoppingCart.price | currency:'INR'}}</td>
+<td><input type="number" placeholder="No. Of Items" [(ngModel)]="productsOfMobileShoppingCart.items" min="0"/></td>
+<td>
+    <button class="btn btn-success" (click)="updateCart(i)">
+    <i class="fa fa-pencil fa-1x" aria-hidden="true" ></i>
+    </button>&nbsp;&nbsp;
+    <button class="btn btn-danger" (click)="deleteCart(i)">
+    <i class="fa fa-trash fa-1x" aria-hidden="true"></i>
+    </button>
+                                
+                            </td>
+<td>{{productsOfMobileShoppingCart.price * productsOfMobileShoppingCart.items | currency : 'INR' }}</td>
+
+                       </tr>
+                </tbody>
+                </table>
+        <div class="total">
+<strong>Total: {{totalPrice | currency :'INR'}}</strong>
+        </div>
+        <div class="container">
+            <button type="button" class="checkoutButton">Check Out</button>
+        </div>
+
+        </div>
+        <div class="pagination">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination pull-right">
+              <li *ngFor="let products of callArray(mobileShoppingCart.length), let in=index">
+                <a class="page-link" (click)="updateIndex(in)">{{in + 1}}</a>
+              </li>
+              </ul>
+          </nav>
+        </div>
+    </div>
+   
+</div>

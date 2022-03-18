@@ -1,0 +1,24 @@
+.total{
+    position: absolute;
+    right: 0;
+    width: 200px;
+    height: 100px;
+    margin-top: 375px;
+    }
+.pagination{
+    position: absolute;
+    right: 0;
+    width: 200px;
+    height: 100px;
+    top: 250px;
+}
+.checkoutButton{
+    position: absolute;
+    padding: 4px;
+    right: 10;
+    width: 10%;
+    height: 30px;
+    border-radius: 50px 20px;
+    outline: none;
+    
+}

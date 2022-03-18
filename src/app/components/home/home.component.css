@@ -1,0 +1,54 @@
+.bg-light {
+    background-color: #f8f9fa!important;
+    margin: 0px 0px 30px 0px;
+}
+
+.card-header.bg-light:hover {
+    background-color: #eef1f3 !important;
+    }
+.row.align-items-center {
+    margin-top: -7px;
+}
+.custom-btn{
+    background-color: #2e405a;
+    color: #fff;
+    border-radius: 0%;
+}
+
+.custom-btn:hover{
+    background-color: #eb5455;
+    color: #fff;
+}
+
+.custom-btn01{
+    background-color: #eb5455;
+    color: #fff;
+    border-radius: 0%;
+}
+
+.custom-btn01:hover{
+    background-color: #2e405a;
+    color: #fff;
+}
+input{
+    border-radius: 2px;
+    border-color: #F4F4F4;
+    padding: 2px;
+    background-color: #fff;
+    width: 50%;
+}
+input.form-control {
+    text-align: center;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    font-size: 14px;
+    padding-left: 10px;
+    color: grey;
+    opacity: 0.6; /* Firefox */
+  }
+
+  article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+    display: block;
+    margin-top: -7px;
+}

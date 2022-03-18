@@ -1,0 +1,73 @@
+<div class="container-fluid signupbgimage">
+<div class="container">
+<div class="row">
+<div class="col-md-6">
+  <div class="text-position">
+<ngtypewriter class="typing-font text-left" [StringList]='list' [speed]='1000'></ngtypewriter>
+</div>
+</div>
+<div class="col-md-6 middle-box">
+
+  <h2 class="text-center mb-4 mt-4 color">REGISTER</h2>
+  <!--<img src="../../../assets/images/avtar-man.png">-->
+    <form #signupForm="ngForm">
+    <input type="text" class="form-control" name="signupname" #signupname="ngModel" [ngModel] placeholder="Please Enter Your Name" required><br>
+    <!--Name Validations Start-->
+    <div class="alert alert-danger" *ngIf = "signupname.invalid && signupname.touched">
+    Name is Required
+    </div>
+    <!--Name Validations Ends-->
+
+
+    <input type="email" email class="form-control" name="signupemail" #signupemail="ngModel" [ngModel] placeholder="Please Enter Your Email ID" required><br>
+    <!--Email Validations Start-->
+    <div class="alert alert-danger" *ngIf="errorMessage">{{errorMessage}}</div>
+    <div class="alert alert-danger" *ngIf = "signupemail.errors?.required && signupemail.touched">
+    Email is Required
+    </div>
+    <div class="alert alert-danger" *ngIf = "signupemail.errors?.email && signupemail.touched">
+    Please Enter in Email Format as abc@gmail.com
+      </div>
+    <!--Email Validations Ends-->
+
+
+    <input type="number" number class="form-control" name="signupnumber" minlength="10"  #signupnumber="ngModel" [ngModel] placeholder="Please Enter Your Mobile Number" required><br>
+    <!--Password Validations Starts-->
+    <div class="alert alert-danger" *ngIf="signupnumber.errors?.required && signupnumber.touched">
+    Please Enter Your Mobile Number
+    </div>
+    <div class="alert alert-danger" *ngIf="signupnumber.errors?.minlength && signupnumber.touched">
+    Please Enter the 10 Digits Phone Number
+    </div>
+    <!--Password Validations Ends-->
+
+    <input type="password" class="form-control" name="signuppassword" #signuppassword="ngModel" [ngModel] placeholder="Please Enter your Password" minlength="6" required><br>
+    <!--Password Validations Starts-->
+    <div class="alert alert-danger" *ngIf="signuppassword.errors?.required && signuppassword.touched">
+    Please Enter the Password    
+    </div>
+    <div class="alert alert-danger" *ngIf="signuppassword.errors?.minlength && signuppassword.touched">
+    Please Enter the Minmum Length of 10 Characters
+    </div>
+    <!--Password Validations Ends-->
+
+
+    <input type="password" class="form-control" name="signupconfirmPassword" #signupconfirmPassword="ngModel" [ngModel] placeholder="Confirm Your Password" required><br>
+    <!--Confirm Password Validations Starts-->
+    <div class="alert alert-danger" *ngIf="signupconfirmPassword.errors?.required && signupconfirmPassword.touched">
+    Please Enter the Confirm Password
+    </div>
+    <div class="alert alert-danger" *ngIf="signuppassword.value !== signupconfirmPassword.value && signupconfirmPassword.touched">
+    Password Doesn't Match   
+    </div>
+    <!--Confirm Password Validations Ends-->
+    <div class="alert alert-success" *ngIf="successMessage">{{successMessage}}</div>
+
+    <button type="button" class="btn custom-btn" [disabled]="!signupForm.valid" (click)="dataCapture(signupForm)">Sign-Up</button>&nbsp;&nbsp;
+    <button type="button" class="btn custom-btn01" (click)="signupForm.resetForm()">Reset</button>
+    </form>
+
+  </div> 
+</div>
+</div>
+</div>

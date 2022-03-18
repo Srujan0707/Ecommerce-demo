@@ -1,0 +1,38 @@
+<h1 class="text-center pb-4">DATA THROUGH API</h1>
+<div class="container">
+<table class="table table-hover">
+<thead class="table-heading">
+    <tr>
+    <th>#</th>
+    <th>Profile Picture</th>
+    <th>First Name</th>    
+    <th>Last Name</th>
+    <th>Email ID</th>
+    <th>Date of Birth</th>
+    <th>Phone Number</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Country</th>
+    <th>PinCode</th>
+</tr>
+</thead>
+<tr *ngFor = "let apiResult of finalResult; let i = index;">
+<td>{{i + 1}}</td>
+<td>
+<img [src]="apiResult.picture.thumbnail">    
+</td>
+<td>{{apiResult.name.first}}</td>
+<td>{{apiResult.name.last}}</td>
+<td>{{apiResult.email}}</td>
+<td>{{apiResult.dob.date | date:'short'}}</td>
+<td>{{apiResult.phone}}</td>
+<td>{{apiResult.location.city}}</td>
+<td>{{apiResult.location.state}}</td>
+<td>{{apiResult.location.country}}</td>
+<td>{{apiResult.location.postcode}}</td>
+</tr>
+
+</table>
+
+
+</div>

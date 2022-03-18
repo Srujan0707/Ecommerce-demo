@@ -1,0 +1,9 @@
+.table-heading{
+    background-color: #eb5455;
+    color: #fff;
+    text-transform: uppercase;
+    border: 0px;
+    }
+    .table thead th {
+        font-size: 14px;
+    }

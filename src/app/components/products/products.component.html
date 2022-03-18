@@ -1,0 +1,47 @@
+<div class="card-top container-fluid">
+<div class="container d-flex">
+    <div class="item">
+        <a>
+            <img class="image-class" src="https://retailmarketing.co.in/wp-content/uploads/2019/06/cpg_company_toronto_corrugated_brown_box_usa-1236x907.png" alt="" title="">
+            <h6>All Products</h6>
+        </a>
+    </div>
+    <div class="item">
+        <a>
+            <img class="image-class" src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/img10_99eedad7-cb35-455c-b570-0c72d2808683.png?v=1643474193" alt="" title="">
+            <h6>Electronics</h6>
+        </a>
+    </div>
+    <div class="item">
+        <a>
+            <img class="image-class" src="https://www.marka.mk/wp-content/uploads/2016/09/descontos-acumulativos-2.png" alt="" title="">
+            <h6>Fashion</h6>
+        </a>
+    </div>
+    <div class="item">
+        <a>
+            <img class="image-class" src="https://www.hazoorilallegacy.com/wp-content/uploads/2021/08/Hazoorilal-Legacy-Gold-XXX.png" alt="" title="">
+            <h6>Jewellery</h6>
+        </a>
+    </div>
+</div>
+</div>
+
+<div class="container">
+    <div class="row">
+       
+            <ng-container *ngFor="let products of productData">
+              
+                <div class="card col-md-3">
+                <img src="{{products.image}}" alt="">
+                <h5 style="white-space:nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100 ch; margin-top: 25px; color: #eb5455;">{{products.title}}</h5>
+                <p style="white-space:nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100 ch; font-size: 14px;">{{products.description}}</p>
+                <p><strong>Price: {{products.price | currency:"INR"}}</strong></p>
+                <button class="btn btn-danger">Add to Cart&nbsp;<i class="fa fa-cart-plus" aria-hidden="true"></i></button>
+            </div>
+       
+            </ng-container>
+
+       
+    </div>
+</div>

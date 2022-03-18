@@ -1,0 +1,48 @@
+/* You can add global styles to this file, and also import other style files */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px white; 
+    border-radius: 20px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #464646; 
+    border-radius: 15px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #464646; 
+  }
+  .Primary-Font{
+    font-family: 'Abel', sans-serif;
+    font-weight: 800;
+}
+
+.Secondary-Font{
+    font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3{
+    font-weight: 800;
+    margin-bottom: 0;
+    font-family: 'Abel', sans-serif;
+}
+::-moz-selection { /* Code for Firefox */
+  color: white;
+  background: #eb5455;
+  }
+  
+  ::selection {
+  color: white;
+  background: #eb5455;
+  }
+  .btn.focus, .btn:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgb(110 139 182);
+}

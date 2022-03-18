@@ -1,0 +1,112 @@
+<!--Mobiles Section Start-->
+<section>
+    <!--Heading Starts-->
+    <div class="container-fluid bg-light p-3 Primary-Font">
+        <h2>MOBILES</h2>
+    </div>
+    <!--Heading Ends-->
+    <!--Mobiles Section Row Start-->
+    <div class="container">
+        <div class="body">
+            <div class="row">
+            <!--Mobile Section Starts-->
+            <div class="col-md-3 col-sm-3" *ngFor="let mp of Mobiles; index as mobiles">
+                <div class="card-header bg-light" style="width: 16rem;">
+                    <div class="row align-items-center">
+                        <img class="card-img-top" src="{{mp.ProductPath}}" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title Primary-Font">{{mp.Name | uppercase}}</h5>
+                            <h4 class="card-title Primary-Font">{{mp.Price | currency : 'INR'}}</h4>
+                            <p class="card-text Secondary-Font">{{mp.Description}}
+                            </p>
+<button class="btn custom-btn" (click)="addToCartOfMobile(mobiles)" >ADD TO CART</button><br><br>
+<div *ngIf="addMobiles === mobiles">
+<input type="number" class="form-control" placeholder="No.of Items" name="items" #items min="1"><br>
+<button class="btn custom-btn01" (click)="buyMobiles(items.value)">BUY</button>
+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Mobile Section Ends-->
+            </div>
+        </div>    
+    </div>
+    </section>
+<!--Mobiles Section Ends-->
+
+
+<!--Laptops Section Start-->
+<section>
+    <!--Heading Starts-->
+    <div class="container-fluid mt-5 bg-light p-3 Primary-Font">
+        <h2>LAPTOPS</h2>
+    </div>
+    <!--Heading Ends-->
+    <!--Laptops Section Row Start-->
+    <div class="container mt-5">
+        <div class="body">
+            <div class="row">
+            <!--Mobile Section Starts-->
+            <div class="col-md-3 col-sm-3" *ngFor="let lp of Laptops; index as laptops"> 
+                <div class="card-header bg-light" style="width: 16rem;">
+                    <div class="row align-items-center">
+                        <img class="card-img-top" src="{{lp.ProductPath}}" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title Primary-Font">{{lp.Name}}</h5>
+                            <h4 class="card-title Primary-Font">{{lp.Price | currency : 'INR'}}</h4>
+                            <p class="card-text Secondary-Font">{{lp.Description}}
+                            </p>
+                            <button class="btn custom-btn"(click)="addToCartOfLaptops(laptops)">ADD TO CART</button>
+                            <br><br>
+<div *ngIf="addLaptops === laptops">
+<input type="number" class="form-control" placeholder="No.of Items" name="items" #items><br>
+<button class="btn custom-btn01">BUY</button>
+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Laptops Section Ends-->
+            </div>
+        </div>    
+    </div>
+    </section>
+<!--Laptops Section Ends-->
+<!--TV Section Start-->
+<section>
+    <!--Heading Starts-->
+    <div class="container-fluid mt-5 bg-light p-3 Primary-Font">
+        <h2>TVs</h2>
+    </div>
+    <!--Heading Ends-->
+    <!--TVs Section Row Start-->
+    <div class="container mt-5">
+        <div class="body">
+            <div class="row">
+            <!--Mobile Section Starts-->
+            <div class="col-md-3 col-sm-3" *ngFor="let tv of TVs; index as tvs">
+                <div class="card-header bg-light" style="width: 16rem; margin-bottom: 50px ;">
+                    <div class="row align-items-center">
+                        <img class="card-img-top" src="{{tv.ProductPath}}" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title Primary-Font">{{tv.Name}}</h5>
+                            <h4 class="card-title Primary-Font">{{tv.Price | currency : 'INR'}}</h4>
+                            <p class="card-text Secondary-Font">{{tv.Description}}
+                            </p>
+                            <button class="btn custom-btn" (click)="addToCartOfTvs(tvs)">ADD TO CART</button>
+                            <br><br>
+                            <div *ngIf="addTvs === tvs">
+                            <input type="number" class="form-control" placeholder="No.of Items" name="items" #items><br>
+                            <button class="btn custom-btn01" >BUY</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--TVs Section Ends-->
+            </div>
+        </div>    
+    </div>
+    </section>
+<!--TV Section Ends-->

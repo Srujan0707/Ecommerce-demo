@@ -1,0 +1,41 @@
+<div class="container-fluid bg-image">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 middle-box">
+				<div class="text-position">
+                    <ngtypewriter class="typing-font text-left" [StringList]='list' [speed]='1000'></ngtypewriter>
+                    </div>
+				<form #loginForm="ngForm">
+					<div class="form-group row">
+						<label class="col-md-4 col-form-label text-md-right">User Name*</label>
+						<div class="col-md-6">
+							<input type="email" email class="form-control" placeholder="Enter Your Email ID " name="emailAddress" #emailAddress="ngModel" [ngModel] required><br>
+                            <div class="alert alert-danger" *ngIf="emailAddress.errors?.required && emailAddress.touched">
+                                Please Enter your Email ID
+                            </div>
+                            <div class="alert alert-danger" *ngIf="emailAddress.errors?.email && emailAddress.touched">
+                                Please Enter User Name ex; abc@gmail.com</div>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="col-md-4 col-form-label text-md-right">Password*</label>
+						<div class="col-md-6">
+							<input type="password" class="form-control" placeholder="Enter your Password" name="loginPassword" #loginPassword="ngModel" [ngModel] required minlength="6"><br>
+                            <div class="alert alert-danger" *ngIf="loginPassword.errors?.required && loginPassword.touched">
+                                Please Enter Your Password
+                            </div>
+                            <div class="alert alert-danger" *ngIf="loginPassword.errors?.minlength && loginPassword.touched">
+                                Enter Minmum 10 Digits
+                            </div>
+						</div>
+					</div><br>
+					<div class="col-md-6 offset-md-4">
+						<button type="button" (click)="dataCaptureOfLoginForm(loginForm)" class="btn custom-btn btn-lg" [disabled]="!loginForm.valid"> 
+						LOGIN </button>&nbsp;&nbsp;
+                        <button type="button" class="btn custom-btn01 btn-lg" (click)="loginForm.resetForm()">Reset</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
